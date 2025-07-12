@@ -38,10 +38,10 @@ has_xsel <- function() has_util(c("xsel", "--clipboard", "--output"))
 has_wl_clipboard <- function() has_wl_paste() & has_wl_copy()
 
 # Determine if system has 'wl-paste' installed
-has_wl_paste <- function() has_util(c("wl-paste", "--primary"))
+has_wl_paste <- function() has_util(c("wl-paste", "--primary", '""'))
 
 # Determine if system has 'wl-paste' installed
-has_wl_copy <- function() has_util(c("wl-copy", "--primary"))
+has_wl_copy <- function() has_util(c("wl-copy", "--primary", '""'))
 
 # Stop read/write and return an error of missing clipboard software.
 notify_no_cb <- function() {
